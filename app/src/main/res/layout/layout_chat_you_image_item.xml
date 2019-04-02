@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="7.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/imageview_userimage_you_item_id" android:paddingLeft="5.0dip" android:layout_width="55.0dip" android:layout_height="55.0dip" android:src="@drawable/ic_person_black_24dp" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip">
+        <TextView android:textColor="@color/black" android:id="@+id/textview_nickname_you_item_id" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:text="닉네임" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/imageview_chat_you_item_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:id="@+id/imageview_play_chat_you_item_id"
+                    android:layout_gravity="center"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_play_circle_outline_black_24dp"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+            <TextView android:textSize="10sp" android:gravity="end|bottom|center" android:layout_gravity="bottom" android:id="@+id/textview_date_you_item_id" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="오후 2:57" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

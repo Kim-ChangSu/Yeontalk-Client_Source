@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/x86",
+  "command": "/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -I../../../../src/main/cpp/native-lib.h -I../../../../src/main/cpp/ffmpeg/x86 -I../../../../src/main/cpp/ffmpeg/build_noConfig  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/ffmpeg.c.o   -c /Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg.c",
+  "file": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg.c"
+},
+
+{
+  "directory": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/x86",
+  "command": "/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -I../../../../src/main/cpp/native-lib.h -I../../../../src/main/cpp/ffmpeg/x86 -I../../../../src/main/cpp/ffmpeg/build_noConfig  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_filter.c.o   -c /Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_filter.c",
+  "file": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_filter.c"
+},
+
+{
+  "directory": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/x86",
+  "command": "/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -I../../../../src/main/cpp/native-lib.h -I../../../../src/main/cpp/ffmpeg/x86 -I../../../../src/main/cpp/ffmpeg/build_noConfig  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_opt.c.o   -c /Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_opt.c",
+  "file": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_opt.c"
+},
+
+{
+  "directory": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/x86",
+  "command": "/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -I../../../../src/main/cpp/native-lib.h -I../../../../src/main/cpp/ffmpeg/x86 -I../../../../src/main/cpp/ffmpeg/build_noConfig  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/cmdutils.c.o   -c /Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/cmdutils.c",
+  "file": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/cmdutils.c"
+},
+
+{
+  "directory": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/x86",
+  "command": "/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -I../../../../src/main/cpp/native-lib.h -I../../../../src/main/cpp/ffmpeg/x86 -I../../../../src/main/cpp/ffmpeg/build_noConfig  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/libavutil/log.c.o   -c /Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/libavutil/log.c",
+  "file": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/libavutil/log.c"
+},
+
+{
+  "directory": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/x86",
+  "command": "/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang --target=i686-none-linux-android21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I../../../../src/main/cpp/native-lib.h -isystem ../../../../libs/x86/include  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG  -fPIC   -o CMakeFiles/native-lib.dir/src/main/cpp/native-lib.c.o   -c /Users/changsu/Desktop/YeonTalk/app/src/main/cpp/native-lib.c",
+  "file": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/native-lib.c"
+}
+]

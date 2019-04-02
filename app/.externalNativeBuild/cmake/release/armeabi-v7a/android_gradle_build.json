@@ -1,0 +1,76 @@
+{
+  "stringTable": {
+    "0": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -I../../../../src/main/cpp/native-lib.h -I../../../../src/main/cpp/ffmpeg/armeabi-v7a -I../../../../src/main/cpp/ffmpeg/build_noConfig -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -Oz -DNDEBUG -fPIC",
+    "2": "--target=armv7-none-linux-androideabi21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I../../../../src/main/cpp/native-lib.h -isystem ../../../../libs/armeabi-v7a/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -Oz -DNDEBUG -fPIC"
+  },
+  "buildFiles": [
+    "/Users/changsu/Desktop/YeonTalk/app/../../../Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/changsu/Desktop/YeonTalk/app/CMakeLists.txt",
+    "/Users/changsu/Desktop/YeonTalk/app/../../../Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "ffmpeg-Release-armeabi-v7a": {
+      "buildCommand": "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a --target ffmpeg",
+      "buildType": "release",
+      "toolchain": "1725865956",
+      "abi": "armeabi-v7a",
+      "artifactName": "ffmpeg",
+      "files": [
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_filter.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_opt.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/cmdutils.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/libavutil/log.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "output": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a/libffmpeg.a"
+    },
+    "native-lib-Release-armeabi-v7a": {
+      "buildCommand": "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a --target native-lib",
+      "buildType": "release",
+      "toolchain": "1725865956",
+      "abi": "armeabi-v7a",
+      "artifactName": "native-lib",
+      "files": [
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/native-lib.c",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "output": "/Users/changsu/Desktop/YeonTalk/app/build/intermediates/cmake/release/obj/armeabi-v7a/libnative-lib.so"
+    }
+  },
+  "toolchains": {
+    "1725865956": {
+      "cCompilerExecutable": "/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

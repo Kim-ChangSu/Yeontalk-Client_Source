@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/linearlayout_item_userslist_id" android:background="@drawable/selector_setting_background_no_stroke" android:layout_width="match_parent" android:layout_height="?android:attr/actionBarSize">
+    <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/imageview_userimage_userslist_id" android:paddingLeft="15dp" android:layout_width="55dp" android:layout_height="55dp" android:src="@drawable/ic_person_black_24dp"/>
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="5dp">
+        <LinearLayout android:gravity="bottom" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <TextView android:textSize="16sp" android:textColor="@color/black" android:id="@+id/textview_usernickname_userslist_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:text="alala"/>
+            <TextView android:textSize="15sp" android:id="@+id/textview_usergender_userslist_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:text="alala"/>
+            <TextView android:textSize="15sp" android:id="@+id/textview_userage_userslist_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15dp" android:text="alala"/>
+        </LinearLayout>
+        <LinearLayout android:gravity="top" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1">
+            <TextView android:textSize="15sp" android:ellipsize="end" android:gravity="center_vertical" android:id="@+id/textview_userintroduction_userslist_id" android:paddingLeft="15dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="alala" android:maxLines="1" android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

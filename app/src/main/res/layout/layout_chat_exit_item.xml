@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:paddingVertical="10dp"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@color/black"
+        android:id="@+id/textview_exit_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="~~~~~ 님이 나가셨습니다. " />
+</LinearLayout>

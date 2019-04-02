@@ -1,0 +1,9 @@
+# ninja log v5
+5	549	1553659355	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.c.o	358dfa5e60117339
+4	729	1553659355	CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/libavutil/log.c.o	ff09adf923a51291
+2	895	1553659355	CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_filter.c.o	a69c0bbc55824ed3
+2	1050	1553659355	CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/cmdutils.c.o	d3e96a73119deeb
+2	1189	1553659355	CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_opt.c.o	58f232bb7b0aefbb
+1	1405	1553659356	CMakeFiles/ffmpeg.dir/src/main/cpp/ffmpeg/build_noConfig/ffmpeg.c.o	3b7cc62a28cdd17f
+1405	1612	1553659356	libffmpeg.a	c9c3fabf92934294
+1612	1736	1553659356	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	68c83602043dcbf3

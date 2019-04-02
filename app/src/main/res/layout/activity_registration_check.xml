@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:padding="15dp" android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이용약관 동의"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"/>
+    <ScrollView android:background="@drawable/textviewstyle" android:padding="10dp" android:layout_width="match_parent" android:layout_height="150dp" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView android:textColor="@color/black" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/access_terms"/>
+            <TextView android:textColor="@color/black" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/access_terms2"/>
+        </LinearLayout>
+
+    </ScrollView>
+    <CheckBox android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@color/black" android:id="@+id/check1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="5dp" android:text="동의합니다."/>
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="개인정보 처리방침 동의"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"/>
+    <ScrollView android:background="@drawable/textviewstyle" android:padding="10dp" android:layout_width="match_parent" android:layout_height="150dp" android:layout_marginLeft="10dp" android:layout_marginTop="5dp" android:layout_marginRight="10dp">
+        <TextView android:textColor="@color/black" android:padding="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/privacy_policy"/>
+    </ScrollView>
+    <CheckBox android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@color/black" android:id="@+id/check2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_marginTop="5dp" android:text="동의합니다."/>
+    <View android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1"/>
+    <Button android:textAppearance="@style/TextAppearance.AppCompat.Medium" android:textColor="@color/black" android:id="@+id/button_registration_check_id" android:background="@drawable/selector_background" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_marginBottom="30dp" android:text="동의합니다."/>
+</LinearLayout>

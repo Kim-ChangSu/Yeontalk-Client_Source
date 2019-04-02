@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <RelativeLayout android:id="@+id/relativeLayout0" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <include layout="@layout/layout_top_toolbar"/>
+        </RelativeLayout>
+        <RelativeLayout android:id="@+id/relativeLayout1" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_above="@+id/relativeLayout2" android:layout_below="@+id/relativeLayout0">
+            <TabHost android:id="@+id/tabHost" android:layout_width="match_parent" android:layout_height="match_parent">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+                    <TabWidget android:id="@android:id/tabs" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                    <View android:background="@color/lightGray" android:layout_width="match_parent" android:layout_height="1dp"/>
+                    <FrameLayout android:id="@android:id/tabcontent" android:layout_width="match_parent" android:layout_height="match_parent">
+                        <LinearLayout android:orientation="vertical" android:id="@+id/tab1" android:layout_width="match_parent" android:layout_height="match_parent">
+                            <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent">
+                                <ProgressBar android:layout_gravity="center" android:id="@+id/progress" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+                                    <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/swiperefreshlayout" android:layout_width="match_parent" android:layout_height="match_parent">
+                                        <android.support.v4.widget.NestedScrollView android:id="@+id/nestedscrollview" android:layout_width="match_parent" android:layout_height="match_parent">
+                                            <LinearLayout android:orientation="vertical" android:focusableInTouchMode="true" android:layout_width="match_parent" android:layout_height="match_parent">
+                                                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                                                    <TextView android:paddingLeft="15dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="내 프로필"/>
+                                                    <View android:background="@color/lightGray" android:layout_width="match_parent" android:layout_height="1dp"/>
+                                                </LinearLayout>
+                                                <android.support.v7.widget.RecyclerView android:id="@+id/recyclerview_myprofile_id" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                                                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                                                    <View android:background="@color/lightGray" android:layout_width="match_parent" android:layout_height="1dp"/>
+                                                    <TextView android:paddingLeft="15dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="챗봇"/>
+                                                    <View android:background="@color/lightGray" android:layout_width="match_parent" android:layout_height="1dp"/>
+                                                </LinearLayout>
+                                                <android.support.v7.widget.RecyclerView android:id="@+id/recyclerview_chatbot_id" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                                                <LinearLayout android:orientation="vertical" android:id="@+id/linearlayout_favorites_text_id" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content">
+                                                    <View android:background="@color/lightGray" android:layout_width="match_parent" android:layout_height="1dp"/>
+                                                    <TextView android:paddingLeft="15dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="즐겨찾기된 친구들"/>
+                                                    <View android:background="@color/lightGray" android:layout_width="match_parent" android:layout_height="1dp"/>
+                                                </LinearLayout>
+                                                <android.support.v7.widget.RecyclerView android:id="@+id/recyclerview_favoriteslist_id" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                                                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                                                    <View android:background="@color/lightGray" android:layout_width="match_parent" android:layout_height="1dp"/>
+                                                    <TextView android:paddingLeft="15dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="접속한 사람들"/>
+                                                    <View android:background="@color/lightGray" android:layout_width="match_parent" android:layout_height="1dp"/>
+                                                </LinearLayout>
+                                                <android.support.v7.widget.RecyclerView android:id="@+id/recyclerview_userslist_id" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                                                <ProgressBar android:id="@+id/bottom_progressbar_id" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                                            </LinearLayout>
+                                        </android.support.v4.widget.NestedScrollView>
+                                    </android.support.v4.widget.SwipeRefreshLayout>
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+                        <LinearLayout android:orientation="vertical" android:id="@+id/tab2" android:layout_width="match_parent" android:layout_height="match_parent">
+                            <android.support.v4.widget.SwipeRefreshLayout android:id="@+id/swiperefreshlayout_images" android:layout_width="match_parent" android:layout_height="match_parent">
+                                <android.support.v4.widget.NestedScrollView android:id="@+id/nestedscrollview_images" android:layout_width="match_parent" android:layout_height="match_parent">
+                                    <LinearLayout android:orientation="vertical" android:focusableInTouchMode="true" android:layout_width="match_parent" android:layout_height="match_parent">
+                                        <android.support.v7.widget.RecyclerView android:id="@+id/recyclerview_users_image_list_id" android:layout_width="match_parent" android:layout_height="match_parent"/>
+                                        <ProgressBar android:id="@+id/bottom_progressbar_images_id" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                                    </LinearLayout>
+                                </android.support.v4.widget.NestedScrollView>
+                            </android.support.v4.widget.SwipeRefreshLayout>
+                        </LinearLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+        </RelativeLayout>
+        <include layout="@layout/layout_bottom_navigation_view"/>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

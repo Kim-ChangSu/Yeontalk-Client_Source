@@ -1,0 +1,24 @@
+{
+  "buildFiles": [
+    "/Users/changsu/Desktop/YeonTalk/app/../../../Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/changsu/Desktop/YeonTalk/app/CMakeLists.txt",
+    "/Users/changsu/Desktop/YeonTalk/app/../../../Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/arm64-v8a --target clean"
+  ],
+  "libraries": {
+    "ffmpeg-Debug-arm64-v8a": {
+      "artifactName": "ffmpeg",
+      "buildCommand": "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/arm64-v8a --target ffmpeg",
+      "abi": "arm64-v8a",
+      "output": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/arm64-v8a/libffmpeg.a"
+    },
+    "native-lib-Debug-arm64-v8a": {
+      "artifactName": "native-lib",
+      "buildCommand": "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/arm64-v8a --target native-lib",
+      "abi": "arm64-v8a",
+      "output": "/Users/changsu/Desktop/YeonTalk/app/build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so"
+    }
+  }
+}

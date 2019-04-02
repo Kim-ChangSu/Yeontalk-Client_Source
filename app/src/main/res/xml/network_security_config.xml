@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">52.79.51.149
+        </domain>
+        <domain includeSubdomains="true">http://www.iamport.kr/demo
+        </domain>
+        <domain includeSubdomains="true">https://openapi.naver.com/v1/papago/n2mt
+        </domain>
+    </domain-config>
+</network-security-config>

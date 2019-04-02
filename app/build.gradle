@@ -1,0 +1,82 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.changsune.changsu.yeontalk"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+
+            }
+        }
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86', 'x86_64'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = []
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    // Layout
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    // CardView
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    // RecyclerView
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    // CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    // SeekBar
+    implementation 'com.crystal:crystalrangeseekbar:1.1.3'
+    // Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+    // ExoPlayer
+    implementation 'com.google.android.exoplayer:exoplayer:2.8.1'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.8.1'
+    // TedPermission
+    implementation 'gun0912.ted:tedpermission:2.2.2'
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    // StyleableToast
+    implementation 'com.muddzdev:styleabletoast:2.2.0'
+    // ButterKnife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    // MultipleImageSelect
+    implementation project(':multipleimageselect')
+    // InAppBilling
+    implementation 'com.android.billingclient:billing:1.2'
+
+}

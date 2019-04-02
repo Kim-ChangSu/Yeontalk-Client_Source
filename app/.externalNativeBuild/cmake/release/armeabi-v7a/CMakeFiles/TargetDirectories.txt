@@ -1,0 +1,4 @@
+/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/ffmpeg.dir
+/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/native-lib.dir

@@ -1,0 +1,76 @@
+{
+  "stringTable": {
+    "0": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/x86_64",
+    "1": "--target=x86_64-none-linux-android21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -I../../../../src/main/cpp/native-lib.h -I../../../../src/main/cpp/ffmpeg/x86_64 -I../../../../src/main/cpp/ffmpeg/build_noConfig -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC",
+    "2": "--target=x86_64-none-linux-android21 --gcc-toolchain=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -Dnative_lib_EXPORTS -I../../../../src/main/cpp/native-lib.h -isystem ../../../../libs/x86_64/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security -O0 -fno-limit-debug-info -fPIC"
+  },
+  "buildFiles": [
+    "/Users/changsu/Desktop/YeonTalk/app/../../../Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake",
+    "/Users/changsu/Desktop/YeonTalk/app/CMakeLists.txt",
+    "/Users/changsu/Desktop/YeonTalk/app/../../../Library/Android/sdk/ndk-bundle/build/cmake/platforms.cmake"
+  ],
+  "cleanCommands": [
+    "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/x86_64 --target clean"
+  ],
+  "libraries": {
+    "native-lib-Debug-x86_64": {
+      "buildCommand": "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/x86_64 --target native-lib",
+      "buildType": "debug",
+      "toolchain": "1725865956",
+      "abi": "x86_64",
+      "artifactName": "native-lib",
+      "files": [
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/native-lib.c",
+          "flagsOrdinal": 2,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "output": "/Users/changsu/Desktop/YeonTalk/app/build/intermediates/cmake/debug/obj/x86_64/libnative-lib.so"
+    },
+    "ffmpeg-Debug-x86_64": {
+      "buildCommand": "/Users/changsu/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake --build /Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/x86_64 --target ffmpeg",
+      "buildType": "debug",
+      "toolchain": "1725865956",
+      "abi": "x86_64",
+      "artifactName": "ffmpeg",
+      "files": [
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_filter.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/ffmpeg_opt.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/cmdutils.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        },
+        {
+          "src": "/Users/changsu/Desktop/YeonTalk/app/src/main/cpp/ffmpeg/build_noConfig/libavutil/log.c",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "output": "/Users/changsu/Desktop/YeonTalk/app/.externalNativeBuild/cmake/debug/x86_64/libffmpeg.a"
+    }
+  },
+  "toolchains": {
+    "1725865956": {
+      "cCompilerExecutable": "/Users/changsu/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": []
+}

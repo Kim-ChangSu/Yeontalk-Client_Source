@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:icon="@drawable/ic_person_black_24dp" android:id="@+id/ic_person" android:title="친구"/>
+    <item android:icon="@drawable/ic_chat_bubble_black_24dp" android:id="@+id/ic_chat" android:title="대화"/>
+    <item android:icon="@drawable/ic_more_horiz_black_24dp" android:id="@+id/ic_more" android:title="기타"/>
+</menu>
