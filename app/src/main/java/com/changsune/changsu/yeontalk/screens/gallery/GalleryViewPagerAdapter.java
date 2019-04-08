@@ -42,7 +42,7 @@ public class GalleryViewPagerAdapter extends PagerAdapter {
 
         mLayoutInflater = LayoutInflater.from(mContext);
         View view = mLayoutInflater.inflate(R.layout.layout_gallery_item, container, false);
-        mImageLoader.loadImage(mImages.get(position), (ImageView) view.findViewById(R.id.imageview_gallery_id));
+        mImageLoader.loadImageInGallery(mImages.get(position), (ImageView) view.findViewById(R.id.imageview_gallery_id));
         container.addView(view);
         return view;
 

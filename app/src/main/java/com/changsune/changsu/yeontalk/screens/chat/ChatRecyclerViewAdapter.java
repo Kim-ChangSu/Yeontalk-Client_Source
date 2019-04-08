@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.changsune.changsu.yeontalk.Constants;
 import com.changsune.changsu.yeontalk.chat.Chat;
 import com.changsune.changsu.yeontalk.screens.common.imageloader.ImageLoader;
+import com.changsune.changsu.yeontalk.screens.gallery.GalleryActivity;
 import com.changsune.changsu.yeontalk.screens.video.VideoActivity;
 import com.changsune.changsu.yeontalk.R;
 
@@ -312,7 +313,9 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter {
                         ((MeImageViewHolder) viewHolder).mImageView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-
+                                ArrayList<String> images = new ArrayList<>();
+                                images.add(mData.get(i).getMessage());
+                                GalleryActivity.start(mContext, images, 0);
                             }
                         });
                     } else  {
@@ -456,7 +459,9 @@ public class ChatRecyclerViewAdapter extends RecyclerView.Adapter {
                         ((YouImageViewHolder) viewHolder).mImageView.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-
+                                ArrayList<String> images = new ArrayList<>();
+                                images.add(mData.get(i).getMessage());
+                                GalleryActivity.start(mContext, images, 0);
                             }
                         });
 

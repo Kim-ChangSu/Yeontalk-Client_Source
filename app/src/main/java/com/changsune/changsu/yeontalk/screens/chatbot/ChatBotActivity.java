@@ -186,13 +186,15 @@ public class ChatBotActivity extends AppCompatActivity implements
 
     // Starting Activity with Data -----------------------------------------------------------------
 
-    public static void start(Context context, String userId, String userNickName, String roomId) {
+    public static void start(Context context, String userId, String userNickName, String roomId, String userImage) {
         Intent intent =  new Intent(context, ChatBotActivity.class);
         intent.putExtra(EXTRA_USER_ID, userId);
         intent.putExtra(EXTRA_CHAT_ROOM_ID, roomId);
         intent.putExtra(EXTRA_USER_NICKNAME, userNickName);
+        intent.putExtra(EXTRA_USER_IMAGE, userImage);
         context.startActivity(intent);
     }
+
 
 
     @Override
@@ -205,7 +207,7 @@ public class ChatBotActivity extends AppCompatActivity implements
         mChatRoomId = getIntent().getExtras().getString(EXTRA_CHAT_ROOM_ID);
         mUserId = getIntent().getExtras().getString(EXTRA_USER_ID);
         mUserNickName = getIntent().getExtras().getString(EXTRA_USER_NICKNAME);
-        mUserImage = "";
+        mUserImage = getIntent().getExtras().getString(EXTRA_USER_IMAGE);
 
         //------------------------------------------------------------------------------------------
 
@@ -281,7 +283,7 @@ public class ChatBotActivity extends AppCompatActivity implements
         // Receiving Data from DataBase ------------------------------------------------------------
 
         Log.e(TAG, "onCreate: " + mChatRoomId);
-        mFetchChatListUseCase.fetchChatListUseCaseAndNotify(mChatRoomId, mMeId, mUserId, mChatTimeLastLoaded, Constants.LOAD_LIMIT);
+        mFetchChatListUseCase.fetchChatListUseCaseAndNotify(mChatRoomId, mMeId, mUserId, mChatTimeLastLoaded, Constants.LOAD_LIMIT, Constants.ON_CREATE);
 
         // -----------------------------------------------------------------------------------------
 
@@ -423,12 +425,11 @@ public class ChatBotActivity extends AppCompatActivity implements
 
     // UploadFileWithChatUseCase.Listener
     @Override
-    public void onFetchChatListUseCaseSucceeded(List<Chat> list) {
+    public void onFetchChatListUseCaseSucceeded(List<Chat> list, String life_cycle) {
         if (list.get(0).getRoomId().equals("No")) {
             mChatRoomId = null;
         } else {
             mChatRoomId = list.get(0).getRoomId();
-            mUserImage = list.get(0).getImage();
             Log.e(TAG, "onFetchChatListUseCaseSucceeded: " + mChatRoomId);
             Log.e(TAG, "onFetchChatListUseCaseSucceeded: " + list.size() );
             mChatArrayList.addAll(list);
@@ -441,7 +442,7 @@ public class ChatBotActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onFetchChatListUseCaseFailed() {
+    public void onFetchChatListUseCaseFailed(String life_cycle) {
         mDialogsManager.showDialogWithId(ServerErrorDialogFragment.newInstance(), "");
     }
 

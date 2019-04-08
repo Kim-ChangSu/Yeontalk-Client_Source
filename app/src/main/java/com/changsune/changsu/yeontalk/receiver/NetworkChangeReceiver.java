@@ -27,10 +27,9 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, final Intent intent) {
 
-        Log.e(TAG, "onReceive: ");
         mSharedPreferences = context.getSharedPreferences(Constants.SHAREDPREF_KEY_PROFILE, Context.MODE_PRIVATE);
         mMeId = mSharedPreferences.getString(Constants.SHAREDPREF_KEY_PROFILE_USER_ID, "");
-
+        Log.e(TAG, "onReceive: " + mMeId);
         // 여기에서 네트워크 상태를 체크 하시면 됩니다.
 
 // 네트워크 변환 Receiver
@@ -44,10 +43,14 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
         Log.e("network Receiver", "network isConnected :  " + isConnected);
 
         if (isConnected) {
-            startService(context, mMeId);
-            changeRecyclerViewIfInChatActivity(context);
+            if (mMeId != "") {
 
+                Log.e(TAG, "onReceive: + startService");
+                startService(context, mMeId);
+
+            }
         } else {
+            Log.e(TAG, "onReceive: stopService");
             stopService(context);
         }
 
@@ -78,7 +81,10 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
 
         if(!isMyServiceRunning(context, ChatService.class)){
             ChatService.start(context, meId);
+            changeRecyclerViewIfInChatActivity(context);
         } else {
+
+            Log.e(TAG, "startService: is Service Running");
 
         }
 
@@ -90,7 +96,7 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
             ChatService.stop(context);
 
         } else {
-
+            Log.e(TAG, "startService: is not Service Running");
         }
 
     }

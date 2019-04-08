@@ -89,7 +89,9 @@ public class ChatActivity extends AppCompatActivity implements
     // Static Variable (a~z)------------------------------------------------------------------------
     private static final String TAG = "ChatActivity";
 
-    private static final int CONNECTION_REQUEST = 1;
+    private static final int CONNECTION_REQUEST = 2;
+    private static final int GALLERY_ACTIVITY = 3;
+    private static final int VIDEO_ACTIVITY = 4;
     private static final int REMOVE_FAVORITE_INDEX = 0;
     private static boolean commandLineRun = false;
 
@@ -377,7 +379,7 @@ public class ChatActivity extends AppCompatActivity implements
         // Receiving Data from DataBase ------------------------------------------------------------
 
         Log.e(TAG, "onCreate: " + mChatRoomId);
-        mFetchChatListUseCase.fetchChatListUseCaseAndNotify(mChatRoomId, mMeId, mUserId, mChatTimeLastLoaded, Constants.LOAD_LIMIT);
+        mFetchChatListUseCase.fetchChatListUseCaseAndNotify(mChatRoomId, mMeId, mUserId, mChatTimeLastLoaded, Constants.LOAD_LIMIT, Constants.ON_CREATE);
 
         // -----------------------------------------------------------------------------------------
 
@@ -478,6 +480,8 @@ public class ChatActivity extends AppCompatActivity implements
                         String size = split[1];
                         addVideoToList(file_path, userId, date, type, "0", Constants.UPLOADED, size);
                         mDeleteChatUnShownUseCase.deleteChatUnShownAndNotify(roomId, mMeId);
+                    } else if (type.equals(Constants.EXIT_TYPE)) {
+                        addChatToList(message, userId, date, type, "0", Constants.UPLOADED);
                     }
 
                 }
@@ -488,7 +492,7 @@ public class ChatActivity extends AppCompatActivity implements
         mBroadcastReceiver_from_networkReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                mFetchChatListUseCase.fetchChatListUseCaseAndNotify(mChatRoomId, mMeId, mUserId, mChatTimeLastLoaded, Constants.LOAD_LIMIT);
+                mFetchChatListUseCase.fetchChatListUseCaseAndNotify(mChatRoomId, mMeId, mUserId, mChatTimeLastLoaded, Constants.LOAD_LIMIT, Constants.ON_CREATE);
 
             }
         };
@@ -548,10 +552,6 @@ public class ChatActivity extends AppCompatActivity implements
     protected void onStop() {
         super.onStop();
 
-        if (mChatRoomId != null) {
-            setArrayPref(mChatRoomId);
-        }
-
         mFetchChatListUseCase.unregisterListener(this);
         mInsertChatUseCase.unregisterListener(this);
         mUploadFileWithChatUseCase.unregisterListener(this);
@@ -573,6 +573,9 @@ public class ChatActivity extends AppCompatActivity implements
         mSharedPreferences = getSharedPreferences(Constants.SHAREDPREF_KEY_PROFILE, MODE_PRIVATE);
         mMeId = mSharedPreferences.getString(Constants.SHAREDPREF_KEY_PROFILE_USER_ID, null);
         mPoint = mSharedPreferences.getString(Constants.SHAREDPREF_KEY_PROFILE_POINT, null);
+
+        mFetchChatListUseCase.fetchChatListUseCaseAndNotify(mChatRoomId, mMeId, mUserId, mChatTimeLastLoaded, Constants.LOAD_LIMIT, Constants.ON_RESTART);
+
     }
 
     @Override
@@ -588,12 +591,29 @@ public class ChatActivity extends AppCompatActivity implements
 
     // UploadFileWithChatUseCase.Listener
     @Override
-    public void onFetchChatListUseCaseSucceeded(List<Chat> list) {
+    public void onFetchChatListUseCaseSucceeded(List<Chat> list, String life_cycle) {
         if (list.get(0).getRoomId().equals("No")) {
             mChatRoomId = null;
+        } else if (life_cycle.equals(Constants.ON_RESTART)) {
+
+            mChatArrayList_uploaded.clear();
+            mChatArrayList_uploaded.addAll(list);
+
+            mChatArrayList.clear();
+            mChatArrayList.addAll(mChatArrayList_uploaded);
+            mChatArrayList.addAll(mChatArrayList_uploading);
+
+            mChatRecyclerViewAdapter.notifyDataSetChanged();
+
+            Log.e(TAG, "onFetchChatListUseCaseSucceeded: ChatService1");
+            ChatService.sendMessage(mUserId + ">" + mMeId + ">" + mChatRoomId + "" + ">" + "" + ">" + Constants.DELETED_UNSHOWN + ">" + "");
+
+            if (mChatArrayList.size() != 0) {
+                mRecyclerView.scrollToPosition(mChatRecyclerViewAdapter.getItemCount()-1);
+            }
+
         } else {
             mChatRoomId = list.get(0).getRoomId();
-            mUserImage = list.get(0).getImage();
 
             Log.e(TAG, "onFetchChatListUseCaseSucceeded: " + mChatRoomId);
             Log.e(TAG, "onFetchChatListUseCaseSucceeded: " + list.size() );
@@ -608,6 +628,7 @@ public class ChatActivity extends AppCompatActivity implements
             mChatArrayList.addAll(mChatArrayList_uploading);
 
             mChatRecyclerViewAdapter.notifyDataSetChanged();
+            Log.e(TAG, "onFetchChatListUseCaseSucceeded: ChatService2");
             ChatService.sendMessage(mUserId + ">" + mMeId + ">" + mChatRoomId + "" + ">" + "" + ">" + Constants.DELETED_UNSHOWN + ">" + "");
 
             if (mChatArrayList.size() != 0) {
@@ -620,8 +641,11 @@ public class ChatActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onFetchChatListUseCaseFailed() {
-        mDialogsManager.showDialogWithId(ServerErrorDialogFragment.newInstance(), "");
+    public void onFetchChatListUseCaseFailed(String life_cycle) {
+        Log.e(TAG, "onFetchChatListUseCaseFailed: ");
+        if (!life_cycle.equals(Constants.ON_RESTART)){
+            mDialogsManager.showDialogWithId(ServerErrorDialogFragment.newInstance(), "");
+        }
 
     }
 
@@ -641,7 +665,10 @@ public class ChatActivity extends AppCompatActivity implements
         mChatRecyclerViewAdapter.notifyDataSetChanged();
         mRecyclerView.scrollToPosition(mChatRecyclerViewAdapter.getItemCount() - 1);
 
+        setArrayPref(mChatRoomId);
+
         if (!type.equals(Constants.VIDEO_CALL_TYPE)) {
+            Log.e(TAG, "onFetchChatListUseCaseSucceeded: ChatService3");
             ChatService.sendMessage(to_user_id + ">" + from_user_id + ">" + room_id + ">" + date + ">" + type + ">" + message);
         }
     }
@@ -674,8 +701,11 @@ public class ChatActivity extends AppCompatActivity implements
 //        mRecyclerView.scrollToPosition(mChatRecyclerViewAdapter.getItemCount() - 1);
         //여기에 딜레이 후 시작할 작업들을 입력
 
+        setArrayPref(mChatRoomId);
+
         String file_path;
         file_path = "http://52.79.51.149/yeontalk/uploads/" + file_name;
+        Log.e(TAG, "onFetchChatListUseCaseSucceeded: ChatService4");
         ChatService.sendMessage(to_user_id + ">" + from_user_id + ">" + room_id + ">" + date + ">" + type + ">" + file_path + ">" + size);
     }
 
@@ -706,8 +736,8 @@ public class ChatActivity extends AppCompatActivity implements
         final String size = getFolderSizeLabel(file);
 
         int rotation = 0;
-        String width;
-        String height;
+        final String width;
+        final String height;
 
         if (file.exists()) {
             MediaMetadataRetriever retriever = new MediaMetadataRetriever();
@@ -739,14 +769,35 @@ public class ChatActivity extends AppCompatActivity implements
         for (Chat c : mChatArrayList) {
             if (c.equals(chat1)) {
                 c.setStatus(Constants.AFTER_COMPRSSING);
+                c.setSize(width+">"+height+">"+size);
             }
         }
-
         mChatRecyclerViewAdapter.notifyDataSetChanged();
         mRecyclerView.scrollToPosition(mChatRecyclerViewAdapter.getItemCount() - 1);
-                //여기에 딜레이 후 시작할 작업들을 입력
 
-        uploadFileWithChat(mediaPath, Constants.VIDEO_TYPE, chat1, width+">"+height+">"+size);
+        new Handler().postDelayed(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                //여기에 딜레이 후 시작할 작업들을 입력
+                for (Chat c : mChatArrayList) {
+                    if (c.equals(chat1)) {
+                        c.setStatus(Constants.UPLOADING);
+                        c.setSize(width+">"+height+">"+size);
+                    }
+                }
+                mChatRecyclerViewAdapter.notifyDataSetChanged();
+                mRecyclerView.scrollToPosition(mChatRecyclerViewAdapter.getItemCount() - 1);
+
+                uploadFileWithChat(mediaPath, Constants.VIDEO_TYPE, chat1, width+">"+height+">"+size);
+
+                //여기에 딜레이 후 시작할 작업들을 입력
+            }
+        }, 1000);// 0.5초 정도 딜레이를 준 후 시작
+
+
+
 
     }
 
@@ -759,12 +810,14 @@ public class ChatActivity extends AppCompatActivity implements
 
     @Override
     public void onDeleteChatUnShownUseCaseSucceeded() {
+        Log.e(TAG, "onFetchChatListUseCaseSucceeded: ChatService5");
         ChatService.sendMessage(mUserId + ">" + mMeId + ">" + mChatRoomId + ">" + "" + ">" + Constants.DELETED_UNSHOWN + ">" + "");
 
     }
 
     @Override
     public void onDeleteChatUnShownUseCaseFailed() {
+        Log.e(TAG, "onDeleteChatUnShownUseCaseFailed: ");
         mDialogsManager.showDialogWithId(ServerErrorDialogFragment.newInstance(), "");
 
     }
@@ -800,6 +853,7 @@ public class ChatActivity extends AppCompatActivity implements
 
     @Override
     public void onUpdateMeDataUseCaseFailed() {
+        Log.e(TAG, "onUpdateMeDataUseCaseFailed: ");
         mDialogsManager.showDialogWithId(ServerErrorDialogFragment.newInstance(), "");
 
     }
@@ -815,6 +869,7 @@ public class ChatActivity extends AppCompatActivity implements
     @Override
     public void onDeleteUsersChatRoomUseCaseSucceeded() {
         Log.e(TAG, "onDeleteUsersChatRoomUseCaseSucceeded: ");
+        Log.e(TAG, "onFetchChatListUseCaseSucceeded: ChatService6");
         ChatService.sendMessage(mUserId + ">" + mMeId + ">" + mChatRoomId + ">" + ">" + Constants.EXIT_TYPE + ">" );
 
         finish();
@@ -873,6 +928,8 @@ public class ChatActivity extends AppCompatActivity implements
         mChatArrayList.remove(chat);
         mChatRecyclerViewAdapter.notifyDataSetChanged();
         mRecyclerView.scrollToPosition(mChatRecyclerViewAdapter.getItemCount() - 1);
+
+        setArrayPref(mChatRoomId);
 
     }
 
@@ -967,7 +1024,7 @@ public class ChatActivity extends AppCompatActivity implements
 
         Chat chat = new Chat(string_date, mUserImage, message, mUserNickName, seenNum, chatType, userId, status, size);
 
-        if (status.equals(Constants.UPLOADING)) {
+        if (status.equals(Constants.BEFORE_COMPRSSING)) {
             mChatArrayList.removeAll(mChatArrayList_uploading);
             mChatArrayList_uploading.add(chat);
             mChatArrayList.addAll(mChatArrayList_uploading);
@@ -1105,7 +1162,6 @@ public class ChatActivity extends AppCompatActivity implements
             public void run()
             {
                 // VideoKit
-
                 for (Chat c : mChatArrayList) {
                     if (c.equals(chat)) {
                         c.setStatus(Constants.COMPRESSING);
@@ -1130,7 +1186,7 @@ public class ChatActivity extends AppCompatActivity implements
                         "-movflags",
                         "+faststart",
                         "-vf",
-                        "scale=-2:720",
+                        "scale=-2:360",
                         mediaPath_compressed);
 
                 //여기에 딜레이 후 시작할 작업들을 입력
@@ -1195,11 +1251,12 @@ public class ChatActivity extends AppCompatActivity implements
                 setResult(resultCode);
                 commandLineRun = false;
                 finish();
-            } else {
-                Toast.makeText(this, "You haven't picked Image/Video", Toast.LENGTH_LONG).show();
+            } else  {
+                Log.e(TAG, "onActivityResult: else");
+
             }
         } catch (Exception e) {
-            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG).show();
+
         }
 
     }

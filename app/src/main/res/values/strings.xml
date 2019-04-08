@@ -42,7 +42,7 @@
     <string name="request_delete_image_dialog_message">정말로 사진을 삭제하시겠습니까?</string>
     <string name="request_selection_send_chat">첫 메세지는 별풍선 50개가 차감됩니다.</string>
     <string name="send">보내기</string>
-    <string name="request_selection_go_to_billing">별풍선이 부족합니다.\별풍선을 충전하시겠습니까?</string>
+    <string name="request_selection_go_to_billing">별풍선이 부족합니다.\n별풍선을 충전하시겠습니까?</string>
     <string name="go">이동</string>
     <string name="request_selection_exit_chat_room">정말로 채팅방에서 나가시겠습니까?</string>
     <string name="exit">나가기</string>
@@ -263,5 +263,6 @@
     <string name="pref_tracing_title">Debug performance tracing.</string>
     <string name="pref_tracing_dlg">Debug performance tracing.</string>
     <string name="pref_tracing_default" translatable="false">false</string>
+    <string name="request_selection_session">계정을 삭제하면 대화내용, 유료아이템 등 모든 데이터가 삭제됩니다.\n정말 탈퇴 하시겠습니까?</string>
 
 </resources>

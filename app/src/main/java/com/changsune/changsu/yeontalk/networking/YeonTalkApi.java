@@ -42,6 +42,10 @@ public interface YeonTalkApi {
     @POST("updateuserdata.php")
     Call<ResponseBody> updateUserData(@Field("user_id") String user_id, @Field("data_key") String data_key, @Field("data_value") String data_value);
 
+    @FormUrlEncoded
+    @POST("secession.php")
+    Call<ResponseBody> secession(@Field("user_id") String user_id);
+
     @GET("deleteimages.php")
     Call<ResponseBody> deleteImage(@Query("user_id") String str, @Query("image_id") String str2);
 

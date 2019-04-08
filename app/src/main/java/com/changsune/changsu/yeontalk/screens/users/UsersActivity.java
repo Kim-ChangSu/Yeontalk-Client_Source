@@ -530,7 +530,9 @@ public class UsersActivity extends AppCompatActivity implements UsersRecyclerVie
             if (mSwipeRefreshLayout_firstTab.isRefreshing()) {
                 mSwipeRefreshLayout_firstTab.setRefreshing(false);
             }
-//            startService(list_me.get(0).getMeId());
+            if (!isMyServiceRunning(ChatService.class)) {
+                startService(list_me.get(0).getMeId());
+            }
         }
 
         SharedPreferences.Editor editor = mSharedPreferences_profile.edit();

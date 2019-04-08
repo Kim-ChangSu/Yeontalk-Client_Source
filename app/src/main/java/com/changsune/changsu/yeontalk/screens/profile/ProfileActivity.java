@@ -555,16 +555,8 @@ public class ProfileActivity extends AppCompatActivity implements SelectionUserD
     public void onUploadFileInGalleryUseCaseSucceeded(List<Image> ex_images, List<Image> new_images) {
         Log.e(TAG, "onUploadFileInGalleryUseCaseSucceeded: ");
 
-        for (Image image : mImages) {
-            int i = 0;
-            for (Image image1 : ex_images) {
-                if (image.equals(image1)) {
-                    image.setImageId(new_images.get(i).getImageId());
-                    image.setImageId(new_images.get(i).getImageUrl());
-                    i++;
-                }
-            }
-        }
+        mImages.clear();
+        mImages.addAll(new_images);
 
         mDialog.dismiss();
 

@@ -20,8 +20,10 @@ public class GalleryActivity extends AppCompatActivity {
 
     // Static Variable (a~z)------------------------------------------------------------------------
     private static final String TAG = "GalleryActivity";
+
     public static final String EXTRA_USER_IMAGES = "EXTRA_USER_IMAGES";
     public static final String EXTRA_GALLERY_POSITION = "EXTRA_GALLERY_POSITION";
+
 
     // ---------------------------------------------------------------------------------------------
 
@@ -221,8 +223,11 @@ public class GalleryActivity extends AppCompatActivity {
         // ViewPager(a~z)
         mGalleryViewPagerAdapter = new GalleryViewPagerAdapter(this, mImages, mImageLoader);
         mViewPager.setAdapter(mGalleryViewPagerAdapter);
-        mTabLayout.setupWithViewPager(mViewPager, true);
-        mViewPager.setCurrentItem(mGalleryPosition);
+        if (mImages.size() != 1) {
+            mTabLayout.setupWithViewPager(mViewPager, true);
+            mViewPager.setCurrentItem(mGalleryPosition);
+
+        }
 
         //------------------------------------------------------------------------------------------
     }
