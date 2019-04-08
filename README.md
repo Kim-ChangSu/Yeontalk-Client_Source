@@ -3,15 +3,16 @@
 
 # 1. 연톡에 관하여
 ## 1.1. 연톡이란?
-익명의 상대와 1대1 실시간 채팅, 사진 전송, 동영상 전송, 영상통화가 가능한 어플
+익명의 상대와 1대1 실시간 채팅, 사진 전송, 동영상 전송, 영상통화가 가능한 어플이다.
 
 
 ## 1.2. 연톡 시연 영상
-[**연톡 시연 영상**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4)
+[**연톡 시연 영상 링크**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4)
 
 ## 1.3. 추가 소스
-[**연톡 서버 소스**](https://github.com/Kim-ChangSu/Yeontalk-Server_Source)
-[**연톡 챗봇 소스**](https://github.com/Kim-ChangSu/Yeontalk-Chatbot_Source)
+[**연톡 서버 소스 링크**](https://github.com/Kim-ChangSu/Yeontalk-Server_Source)
+
+[**연톡 챗봇 소스 링크**](https://github.com/Kim-ChangSu/Yeontalk-Chatbot_Source)
 
 ****
 # 2. 주요 기능
