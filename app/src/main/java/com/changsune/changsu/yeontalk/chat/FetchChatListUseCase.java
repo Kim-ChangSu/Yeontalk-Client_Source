@@ -17,8 +17,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class FetchChatListUseCase extends BaseObservable<FetchChatListUseCase.Listener> {
 
     public interface Listener {
-        void onFetchChatListUseCaseSucceeded(List<Chat> list, String life_cycle);
-        void onFetchChatListUseCaseFailed(String life_cycle);
+        void onFetchChatListUseCaseSucceeded(List<Chat> list);
+        void onFetchChatListUseCaseFailed();
     }
 
     private final YeonTalkApi mYeonTalkApi;
@@ -30,7 +30,7 @@ public class FetchChatListUseCase extends BaseObservable<FetchChatListUseCase.Li
         mYeonTalkApi = (YeonTalkApi) new Builder().baseUrl("http://52.79.51.149/yeontalk/").addConverterFactory(GsonConverterFactory.create()).build().create(YeonTalkApi.class);
     }
 
-    public void fetchChatListUseCaseAndNotify(String roomId, String meId, String userId, String chatTimeLastLoaded, String loadLimit, final String life_cycle) {
+    public void fetchChatListUseCaseAndNotify(String roomId, String meId, String userId, String chatTimeLastLoaded, String loadLimit) {
 
         cancelCurrentFetchIfActive();
 
@@ -39,15 +39,15 @@ public class FetchChatListUseCase extends BaseObservable<FetchChatListUseCase.Li
             @Override
             public void onResponse(Call<ChatListResponseSchema> call, Response<ChatListResponseSchema> response) {
                 if (response.isSuccessful()) {
-                    notifySucceeded(response.body().getChatList(), life_cycle);
+                    notifySucceeded(response.body().getChatList());
                 } else {
-                    notifyFailed(life_cycle);
+                    notifyFailed();
                 }
             }
 
             @Override
             public void onFailure(Call<ChatListResponseSchema> call, Throwable t) {
-                notifyFailed(life_cycle);
+                notifyFailed();
             }
         });
     }
@@ -58,15 +58,15 @@ public class FetchChatListUseCase extends BaseObservable<FetchChatListUseCase.Li
         }
     }
 
-    private void notifySucceeded(List<Chat> chatList, String life_cycle) {
+    private void notifySucceeded(List<Chat> chatList) {
         for (Listener listener : getListeners()) {
-            listener.onFetchChatListUseCaseSucceeded(chatList, life_cycle);
+            listener.onFetchChatListUseCaseSucceeded(chatList);
         }
     }
 
-    private void notifyFailed(String life_cycle) {
+    private void notifyFailed() {
         for (Listener listener : getListeners()) {
-            listener.onFetchChatListUseCaseFailed(life_cycle);
+            listener.onFetchChatListUseCaseFailed();
         }
     }
 }

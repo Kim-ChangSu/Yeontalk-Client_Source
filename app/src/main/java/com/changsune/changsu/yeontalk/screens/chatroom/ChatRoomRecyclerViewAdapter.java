@@ -98,13 +98,6 @@ public class ChatRoomRecyclerViewAdapter extends RecyclerView.Adapter<ChatRoomRe
                 }
             }
 
-            if (mItems.get(i).getUserImage() == null || (mItems.get(i)).getUserImage().equals("") ) {
-                viewHolder.mCircleImageView_userImage.setImageResource(R.drawable.ic_person_black_24dp);
-            } else {
-                mImageLoader.loadImage((mItems.get(i)).getUserImage(), viewHolder.mCircleImageView_userImage);
-
-            }
-
             viewHolder.mTextView_userNickName.setText(((ChatRoom) mItems.get(i)).getUserNickName());
             viewHolder.mTextView_last_chat_date.setText(mDate);
 
@@ -143,7 +136,7 @@ public class ChatRoomRecyclerViewAdapter extends RecyclerView.Adapter<ChatRoomRe
                 public void onClick(View v) {
 
                     if (mItems.get(i).getUserDeviceId().equals("chatbot")) {
-                        ChatBotActivity.start(mContext, mItems.get(i).getUserId(), mItems.get(i).getUserNickName(), mItems.get(i).getRoomId(), mItems.get(i).getUserImage());
+                        ChatBotActivity.start(mContext, mItems.get(i).getUserId(), mItems.get(i).getUserNickName(), mItems.get(i).getRoomId());
                     } else {
                         ChatActivity.start(mContext, mItems.get(i).getUserId(), mItems.get(i).getUserNickName(), mItems.get(i).getRoomId(), mItems.get(i).getUserImage());
                     }

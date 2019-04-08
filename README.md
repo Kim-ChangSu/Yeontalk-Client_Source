@@ -18,6 +18,8 @@
 # 2. 주요 기능
 ## 2.1. 친구 리스트
 * 친구 목록
+![Alt Text](http://52.79.51.149/yeontalk/uploads/userslist.gif)
+
     ```
     - 친구들을 최근 어플 접속 시간 순으로 정렬한다.
 

@@ -109,8 +109,8 @@ public class ChatService extends Service implements FetchChatRoomListUseCase.Lis
                     while (true) {
 
                         String message = mBufferedReader.readLine();
+                        Log.e(TAG, "message_received: " + message);
                         onReceive(message);
-
                     }
 
                 } catch (IOException e) {
@@ -134,10 +134,8 @@ public class ChatService extends Service implements FetchChatRoomListUseCase.Lis
                     Log.e(TAG, "run_python: " + mUserId);
 
                     while (true) {
-
                         String message = mBufferedReader_py.readLine();
                         onReceive(message);
-
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -146,13 +144,12 @@ public class ChatService extends Service implements FetchChatRoomListUseCase.Lis
             }
         }).start();
 
-        return super.onStartCommand(intent, flags, startId);
 
+
+        return super.onStartCommand(intent, flags, startId);
     }
 
     public static void sendMessage(final String message) {
-
-        Log.e(TAG, "sendMessage: ");
 
         if (ChatService.mSocket != null) {
             new Thread(new Runnable() {
@@ -171,19 +168,14 @@ public class ChatService extends Service implements FetchChatRoomListUseCase.Lis
     @Override
     public void onDestroy() {
         super.onDestroy();
-
-        if(mSocket != null){
-            Log.e(TAG, "onDestroy: ");
-//                sendMessage("Socket_Closed" + ">" + mUserId);
-            try {
+        try {
+            if(mSocket != null){
+                sendMessage("Socket_Closed" + ">" + mUserId);
                 mSocket.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-                Log.e(TAG, "onDestroy: catch");
             }
-
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
         mFetchChatRoomListUseCase.unregisterListener(this);
     }
 
@@ -195,52 +187,50 @@ public class ChatService extends Service implements FetchChatRoomListUseCase.Lis
         String currentActivity = taskInfo.get(0).topActivity.getShortClassName();
         Log.e( "CURRENT Activity ",  currentActivity);
 
+        String[] split = message.split(">", 6);
 
+        String toUserId = split[0];
+        String fromUserId = split[1];
+        String roomId = split[2];
+        String chat_date = split[3];
+        String type = split[4];
+        String chat_message = split[5].replace("%n", "\n");
 
-        if (currentActivity.equals(".screens.chatbot.ChatBotActivity")) {
+        if (type.equals(Constants.VIDEO_CALL_TYPE)) {
 
-            Intent intent = new Intent(Constants.CHATBOT_ACTIVITY_BROADCAST_RECEIVER_KEY);
-            intent.putExtra(Constants.CHATBOT_ACTIVITY_BROADCAST_RECEIVER_MESSAGE_KEY, message);
-            LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
+            VideoCallRequestActivity.start(this, fromUserId, chat_date, chat_message);
 
         } else {
 
-            String[] split = message.split(">", 6);
+            if (isAppIsInBackground(getApplicationContext())) {
 
-            String toUserId = split[0];
-            String fromUserId = split[1];
-            String roomId = split[2];
-            String chat_date = split[3];
-            String type = split[4];
-            String chat_message = split[5].replace("%n", "\n");
+//            notiOn = lp.getString("noti_on","  - 메시지 알람 Off");
+//            Log.e("앱 백그라운드 상태 ", "ㅇㅋ");
+//            if(notiOn.equals("  - 메시지 알람 On")){
+//                onNotification(chat_message, fromUserId, roomId);
+//            }
 
-            if (type.equals(Constants.VIDEO_CALL_TYPE)) {
+            } else if (currentActivity.equals(".screens.chatroom.ChatRoomActivity")){
 
-                VideoCallRequestActivity.start(this, fromUserId, chat_date, chat_message);
+                mFetchChatRoomListUseCase.fetchChatRoomListAndNotify(mUserId);
 
-            } else {
+            } else if (currentActivity.equals(".screens.chat.ChatActivity")){
 
-                if (currentActivity.equals(".screens.chatroom.ChatRoomActivity")){
+                Intent intent = new Intent(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_KEY);
+                intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_USER_ID_KEY, fromUserId);
+                intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_ROOM_ID_KEY, roomId);
+                intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_DATE_KEY, chat_date);
+                intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_MESSAGE_KEY, chat_message);
+                intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_TYPE_KEY, type);
+                LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
 
-                    mFetchChatRoomListUseCase.fetchChatRoomListAndNotify(mUserId);
-
-                } else if (currentActivity.equals(".screens.chat.ChatActivity")){
-
-                    Intent intent = new Intent(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_KEY);
-                    intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_USER_ID_KEY, fromUserId);
-                    intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_ROOM_ID_KEY, roomId);
-                    intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_DATE_KEY, chat_date);
-                    intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_MESSAGE_KEY, chat_message);
-                    intent.putExtra(Constants.CHAT_ACTIVITY_BROADCAST_RECEIVER_TYPE_KEY, type);
-                    LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
-
-                }
-
+            } else if (currentActivity.equals(".screens.chatbot.ChatBotActivity")){
+                Intent intent = new Intent(Constants.CHATBOT_ACTIVITY_BROADCAST_RECEIVER_KEY);
+                intent.putExtra(Constants.CHATBOT_ACTIVITY_BROADCAST_RECEIVER_MESSAGE_KEY, message);
+                LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
             }
 
         }
-
-
 
     }
 

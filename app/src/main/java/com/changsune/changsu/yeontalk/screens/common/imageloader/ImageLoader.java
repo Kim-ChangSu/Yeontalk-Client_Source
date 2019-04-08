@@ -41,11 +41,7 @@ public class ImageLoader {
     }
 
     public void loadImage(String uri, ImageView target) {
-        GlideApp.with(mActivity).load(uri).placeholder(R.color.gainsboro).apply(mDefaultRequestOptions).into(target);
-    }
-
-    public void loadImageInGallery(String uri, ImageView target) {
-        GlideApp.with(mActivity).load(uri).placeholder(R.color.gainsboro).into(target);
+        GlideApp.with(mActivity).load(uri).into(target);
     }
 
     public void loadChatImage(String uri, ImageView target) {

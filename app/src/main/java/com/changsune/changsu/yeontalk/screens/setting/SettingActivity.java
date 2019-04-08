@@ -10,21 +10,16 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.changsune.changsu.yeontalk.ChatService;
 import com.changsune.changsu.yeontalk.Constants;
-import com.changsune.changsu.yeontalk.me.SecessionUseCase;
 import com.changsune.changsu.yeontalk.screens.common.dialogs.DialogsManager;
 import com.changsune.changsu.yeontalk.screens.common.dialogs.RequestSelectionRegistrationDialogFragment;
-import com.changsune.changsu.yeontalk.screens.common.dialogs.RequestSelectionSessionDialogFragment;
 import com.changsune.changsu.yeontalk.screens.common.dialogs.SettingFriendDialogFragment;
-import com.changsune.changsu.yeontalk.screens.registrationindex.RegistrationIndexActivity;
 import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarChangeListener;
 import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListener;
 import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
 import com.changsune.changsu.yeontalk.R;
 
-public class SettingActivity extends AppCompatActivity implements SettingFriendDialogFragment.Listener
-        , RequestSelectionSessionDialogFragment.Listener, SecessionUseCase.Listener{
+public class SettingActivity extends AppCompatActivity implements SettingFriendDialogFragment.Listener{
 
     // Static Variable (a~z)------------------------------------------------------------------------
 
@@ -79,18 +74,13 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
     // LinearLayoutManager(a~z)
 
     // Networking(a~z)
-    SecessionUseCase mSecessionUseCase;
 
     // Receiver(a~z)
 
     // RecyclerViewAdapter(a~z)
 
     // SharedPreference(a~z)
-    SharedPreferences mSharedPreferences_setting;
-    SharedPreferences mSharedPreferences_profile;
-    SharedPreferences mSharedPreferences_images;
-    SharedPreferences mSharedPreferences_chat_uploading;
-
+    SharedPreferences mSharedPreferences;
 
     // Socket(a~z)
 
@@ -169,15 +159,11 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
         // LayoutManager (a~z)
 
         // Networking (a~z)
-        mSecessionUseCase = new SecessionUseCase();
 
         // RecyclerViewAdapter (a~z)
 
         // SharedPreference(a~z)
-        mSharedPreferences_setting = getSharedPreferences(Constants.SHAREDPREF_KEY_SETTING, MODE_PRIVATE);
-        mSharedPreferences_profile = getSharedPreferences(Constants.SHAREDPREF_KEY_PROFILE, MODE_PRIVATE);
-        mSharedPreferences_images = getSharedPreferences(Constants.SHAREDPREF_KEY_IMAGES, MODE_PRIVATE);
-        mSharedPreferences_chat_uploading = getSharedPreferences(Constants.SHAREDPREF_KEY_CHAT_UPLOADING, MODE_PRIVATE);
+        mSharedPreferences = getSharedPreferences(Constants.SHAREDPREF_KEY_SETTING, MODE_PRIVATE);
 
         // String (a~z)
 
@@ -193,11 +179,11 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
 
         // Receiving Data from SharedPreference ----------------------------------------------------
 
-        mGender = mSharedPreferences_setting.getString(Constants.SHAREDPREF_KEY_SETTING_GENDER, null);
-        mMaxAge = mSharedPreferences_setting.getString(Constants.SHAREDPREF_KEY_SETTING_MAX_AGE, null);
-        mMinAge = mSharedPreferences_setting.getString(Constants.SHAREDPREF_KEY_SETTING_MIN_AGE, null);
-        mNation = mSharedPreferences_setting.getString(Constants.SHAREDPREF_KEY_SETTING_NATION, null);
-        mRegion = mSharedPreferences_setting.getString(Constants.SHAREDPREF_KEY_SETTING_REGION, null);
+        mGender = mSharedPreferences.getString(Constants.SHAREDPREF_KEY_SETTING_GENDER, null);
+        mMaxAge = mSharedPreferences.getString(Constants.SHAREDPREF_KEY_SETTING_MAX_AGE, null);
+        mMinAge = mSharedPreferences.getString(Constants.SHAREDPREF_KEY_SETTING_MIN_AGE, null);
+        mNation = mSharedPreferences.getString(Constants.SHAREDPREF_KEY_SETTING_NATION, null);
+        mRegion = mSharedPreferences.getString(Constants.SHAREDPREF_KEY_SETTING_REGION, null);
 
 
         //------------------------------------------------------------------------------------------
@@ -211,12 +197,6 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
         // BottomNavView
 
         // Button
-        mButton_secession.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openRequestSelectionSessionDialog();
-            }
-        });
 
         // CrystalRangeSeekBar
         if (mMinAge != null) {
@@ -302,13 +282,19 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
     @Override
     protected void onStart() {
         super.onStart();
-        mSecessionUseCase.registerListener(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        mSecessionUseCase.unregisterListener(this);
+
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+        editor.putString(Constants.SHAREDPREF_KEY_SETTING_GENDER, mGender);
+        editor.putString(Constants.SHAREDPREF_KEY_SETTING_MAX_AGE, mMaxAge);
+        editor.putString(Constants.SHAREDPREF_KEY_SETTING_MIN_AGE, mMinAge);
+        editor.putString(Constants.SHAREDPREF_KEY_SETTING_NATION, mNation);
+        editor.putString(Constants.SHAREDPREF_KEY_SETTING_REGION, mRegion);
+        editor.commit();
 
     }
 
@@ -319,8 +305,6 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
     @Override
     public void onPositiveButtonClicked(String key, String value) {
 
-        SharedPreferences.Editor editor = mSharedPreferences_setting.edit();
-
         if (key.equals("성별")) {
             if (value == null) {
                 mGender = value;
@@ -329,9 +313,6 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
                 mGender = value;
                 mTextView_setting_gender.setText(mGender);
             }
-            editor.putString(Constants.SHAREDPREF_KEY_SETTING_GENDER, mGender);
-            editor.commit();
-
         } else if (key.equals("국가")) {
             if (value == null) {
                 mNation = value;
@@ -344,9 +325,6 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
                 mRegion = null;
                 mTextView_setting_region.setText(R.string.setting_default);
             }
-            editor.putString(Constants.SHAREDPREF_KEY_SETTING_NATION, mNation);
-            editor.putString(Constants.SHAREDPREF_KEY_SETTING_REGION, mRegion);
-            editor.commit();
 
         } else if (key.equals("지역")) {
 
@@ -357,53 +335,8 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
                 mRegion = value;
                 mTextView_setting_region.setText(mRegion);
             }
-            editor.putString(Constants.SHAREDPREF_KEY_SETTING_REGION, mRegion);
-            editor.commit();
         }
-
     }
-
-    @Override
-    public void onButtonSessionClicked() {
-
-        String meId = mSharedPreferences_profile.getString(Constants.SHAREDPREF_KEY_PROFILE_USER_ID, "");
-        mSecessionUseCase.secessionAndNotify(meId);
-
-    }
-
-    @Override
-    public void onSecessionUseCaseSucceeded() {
-
-        SharedPreferences.Editor editor_setting = mSharedPreferences_setting.edit();
-        SharedPreferences.Editor editor_profile = mSharedPreferences_profile.edit();
-        SharedPreferences.Editor editor_images = mSharedPreferences_images.edit();
-        SharedPreferences.Editor editor_chat_uploading = mSharedPreferences_chat_uploading.edit();
-
-        editor_setting.clear();
-        editor_setting.commit();
-
-        editor_profile.clear();
-        editor_profile.commit();
-
-        editor_images.clear();
-        editor_images.commit();
-
-        editor_chat_uploading.clear();
-        editor_chat_uploading.commit();
-
-        ChatService.stop(this);
-
-        Intent intent = new Intent(this, RegistrationIndexActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        this.startActivity(intent);
-
-    }
-
-    @Override
-    public void onSecessionUseCaseFailed() {
-
-    }
-
 
 
     // ---------------------------------------------------------------------------------------------
@@ -424,9 +357,6 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
     }
 
     private void onRangeSeekBarValueChangeFinished(Number minValue, Number maxValue) {
-
-        SharedPreferences.Editor editor = mSharedPreferences_setting.edit();
-
         if (String.valueOf(minValue).equals("19")) {
             mMinAge = null;
         } else {
@@ -437,10 +367,6 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
         } else {
             mMaxAge = String.valueOf(maxValue);
         }
-
-        editor.putString(Constants.SHAREDPREF_KEY_SETTING_MAX_AGE, mMaxAge);
-        editor.putString(Constants.SHAREDPREF_KEY_SETTING_MIN_AGE, mMinAge);
-        editor.commit();
     }
 
     // ---------------------------------------------------------------------------------------------
@@ -464,10 +390,6 @@ public class SettingActivity extends AppCompatActivity implements SettingFriendD
 
     private void openRequestSelectionSettingDialog(String value) {
         mDialogsManager.showDialogWithId(RequestSelectionRegistrationDialogFragment.newInstance(), value);
-    }
-
-    private void openRequestSelectionSessionDialog() {
-        mDialogsManager.showDialogWithId(RequestSelectionSessionDialogFragment.newInstance(this), "");
     }
 
     // ---------------------------------------------------------------------------------------------

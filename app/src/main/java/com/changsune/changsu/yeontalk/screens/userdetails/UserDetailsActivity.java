@@ -255,11 +255,6 @@ public class UserDetailsActivity extends AppCompatActivity implements FetchUserD
 
         setUpButtons();
 
-        if (mUserId.equals("2814")) {
-            mButton_insert_favorite.setVisibility(View.GONE);
-            mButton_delete_favorite.setVisibility(View.GONE);
-        }
-
         mButton_insert_favorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -424,7 +419,7 @@ public class UserDetailsActivity extends AppCompatActivity implements FetchUserD
 
     private void onChatButtonClicked() {
         if (mUserDetails.getUserDeviceId().equals("chatbot")) {
-            ChatBotActivity.start(this, mUserId, mUserDetails.getUserNickName(), null, mUserDetails.getUserProfileImage());
+            ChatBotActivity.start(this, mUserId, mUserDetails.getUserNickName(), null);
         } else {
             ChatActivity.start(this, mUserId, mUserDetails.getUserNickName(), null, mUserDetails.getUserProfileImage());
         }

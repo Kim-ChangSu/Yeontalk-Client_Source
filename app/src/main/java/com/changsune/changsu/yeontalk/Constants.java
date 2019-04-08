@@ -47,10 +47,6 @@ public final class Constants {
     public static final String BASE_IP_PYTHON = "10.0.2.2";
     public static final int PORT_PYTHON = 65432;
 
-    // Activity
-    public static String USERDETAIL_ACTIVITY = "USERDETAIL_ACTIVITY";
-    public static String CHAT_ACTIVITY = "CHAT_ACTIVITY";
-
 
     // SHAREDPREF_KEY_SETTING
     public static String SHAREDPREF_KEY_SETTING = "SHAREDPREF_KEY_SETTING";
@@ -73,11 +69,8 @@ public final class Constants {
     public static String SHAREDPREF_KEY_PROFILE_INSTRODUCTION = "SHAREDPREF_KEY_PROFILE_INSTRODUCTION";
     public static String SHAREDPREF_KEY_PROFILE_POINT = "SHAREDPREF_KEY_PROFILE_POINT";
 
-
-    // SHAREDPREF_KEY_IMAGES
     public static String SHAREDPREF_KEY_IMAGES = "SHAREDPREF_KEY_IMAGES";
 
-    // SHAREDPREF_KEY_UPLOADING
     public static String SHAREDPREF_KEY_CHAT_UPLOADING = "SHAREDPREF_KEY_CHAT_UPLOADING";
     public static String SHAREDPREF_KEY_CHAT_UPLOADING_DATA = "SHAREDPREF_KEY_CHAT_UPLOADING_DATA";
 
@@ -98,12 +91,62 @@ public final class Constants {
 
     public static String CHAT_ACTIVITY_BROADCAST_RECEIVER_FOR_CHANGING_VIEW_KEY = "CHAT_ACTIVITY_BROADCAST_RECEIVER_FOR_CHANGING_VIEW_KEY";
 
+
+
+//    public static String BIRTHYEAR = "";
+//    public static ArrayList<String> BIRTHYEARS = new ArrayList();
+//    public static List<ChatRoom> CHAT_ROOM_LIST = new ArrayList();
+//
+//
+//    public static ArrayList<User> FAVORITES_LIST = new ArrayList();
+//    public static String GENDER = "";
+//    public static ArrayList<String> GENDERS = new ArrayList();
+//    public static String IMAGE = "";
+//
+//    public static String INTRODUCTION = "";
+//    public static String LOAD_LIMIT = "10";
+//    public static String LOAD_LIMIT_IMAGE = "15";
+//    public static String LOGIN_TIME = "";
+//    public static ArrayList<Image> MYPROFILE_IMAGE_LIST = new ArrayList();
+//    public static ArrayList<User> MYPROFILE_LIST = new ArrayList();
+//    public static String NATION = "";
+//    public static ArrayList<String> NATIONS = new ArrayList();
+//    public static String NICKNAME = "";
+//    public static String PAGING_DOWN_LOGIN_TIME = null;
+//    public static String PAGING_UP_LOGIN_TIME = null;
+//    public static String POINT = null;
+//    public static final String PREFS_SETTING_FRIEND_FILE = "setting_friend.xml";
+//    public static final String PREFS_SETTING_GENER = "setting_gender";
+//    public static final String PREFS_SETTING_GENER_NUM = "setting_gender_num";
+//    public static final String PREFS_SETTING_MAX_AGE = "setting_max_age";
+//    public static final String PREFS_SETTING_MIN_AGE = "setting_min_age";
+//    public static final String PREFS_SETTING_NATION = "setting_nation";
+//    public static final String PREFS_SETTING_NATION_NUM = "setting_nation_num";
+//    public static final String PREFS_SETTING_REGION = "setting_region";
+//    public static final String PREFS_SETTING_REGION_NUM = "setting_region_num";
+//    public static String REGION = "";
+//    public static ArrayList<String> REGIONS_CHINA = new ArrayList();
+//    public static ArrayList<String> REGIONS_JAPEN = new ArrayList();
+//    public static ArrayList<String> REGIONS_KOREA = new ArrayList();
+//    public static ArrayList<String> REGIONS_USA = new ArrayList();
+//    public static ArrayList<String> SETTING_BIRTHYEARS = new ArrayList();
+//    public static String SETTING_GENDER = "";
+//    public static ArrayList<String> SETTING_GENDERS = new ArrayList();
+//    public static Integer SETTING_GENDER_NUM = Integer.valueOf(0);
+//    public static String SETTING_MAX_AGE = "";
+//    public static String SETTING_MIN_AGE = "";
+//    public static String SETTING_NATION = "";
+//    public static ArrayList<String> SETTING_NATIONS = new ArrayList();
+//    public static Integer SETTING_NATION_NUM = Integer.valueOf(0);
+//    public static String SETTING_REGION = "";
+//    public static ArrayList<String> SETTING_REGIONS_CHINA = new ArrayList();
+//    public static ArrayList<String> SETTING_REGIONS_JAPEN = new ArrayList();
+//    public static ArrayList<String> SETTING_REGIONS_KOREA = new ArrayList();
+//    public static ArrayList<String> SETTING_REGIONS_USA = new ArrayList();
+//    public static Integer SETTING_REGION_NUM = Integer.valueOf(0);
+//    public static ArrayList<User> USERS_IMAGE_LIST = new ArrayList();
+//    public static ArrayList<User> USERS_LIST = new ArrayList();
     public static String VIDEO_CALL_TYPE = "VIDEO_CALL";
-
-    // ACTIVITY_LIFE_CYCLE
-
-    public static String ON_RESTART = "ON_RESTART";
-    public static String ON_CREATE = "ON_CREATE";
 
     public static String VOICE_CALL_TYPE = "VOICE_CALL";
     public static String VOICE_MAIL_TYPE = "VOICE_MAIL";
