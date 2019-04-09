@@ -100,7 +100,7 @@
 
 * 실시간 채팅
 
-![실시간 채팅](http://52.79.51.149/yeontalk/uploads/chatroom.gif)
+![실시간 채팅](http://52.79.51.149/yeontalk/uploads/chat.gif)
     
 	- 실시간으로 채팅이 읽혔는지, 안 읽혔는지 확인 가능하다. 
 
