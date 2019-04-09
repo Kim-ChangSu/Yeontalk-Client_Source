@@ -18,7 +18,8 @@
 # 2. 주요 기능
 ## 2.1. 친구 리스트
 * 친구 목록
-![Alt Text](http://52.79.51.149/yeontalk/uploads/userslist3.gif)
+
+![친구 목록](http://52.79.51.149/yeontalk/uploads/userslist3.gif)
 
     - 친구들을 최근 어플 접속 시간 순으로 정렬한다.
 
@@ -31,7 +32,7 @@
     - 화면을 아래로 스크롤함에 따라 목록에 친구들이 30명씩 추가된다.
 
        + 이유 : 서버로부터 한번에 너무 많은 친구들의 정보들을 가져온다면, 사용자가 오랜 시간동안 화면이 로딩되는 것을 기다려야 한다.
-       
+
 
 * 프로필 사진 목록
 
@@ -44,7 +45,7 @@
     
 * 즐겨찾기
 
-![Alt Text](http://52.79.51.149/yeontalk/uploads/favorites4.gif)
+![즐겨찾기](http://52.79.51.149/yeontalk/uploads/favorites4.gif)
 
 
 	- 관심이 있는 친구들을 따로 즐겨찾기 목록에 추가할 수 있다. 
@@ -56,7 +57,7 @@
 
 * 친구 조건 설정의 따른 친구 리스트 수정
 
-![Alt Text](http://52.79.51.149/yeontalk/uploads/condition5.gif)
+![친구 리스트 수정](http://52.79.51.149/yeontalk/uploads/condition5.gif)
 
 	- 친구 목록을 사용자가 원하는 조건에 맞추어 보여준다. 
 
