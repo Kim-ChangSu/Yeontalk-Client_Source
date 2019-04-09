@@ -35,7 +35,7 @@
     ```
 
 * 프로필 사진 목록
-![Alt Text](http://52.79.51.149/yeontalk/uploads/usersimagelist.gif)
+![Alt Text](http://52.79.51.149/yeontalk/uploads/usersimagelist2.gif)
 <img src="http://52.79.51.149/yeontalk/uploads/usersimagelist.gif" width="50" height="50" />
 
     ```
