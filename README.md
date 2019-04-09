@@ -36,7 +36,7 @@
 
 * 프로필 사진 목록
 
-![very good|512x397, 50%](http://52.79.51.149/yeontalk/uploads/usersimage_list.gif = 250x)
+![very good|512x397, 50%](http://52.79.51.149/yeontalk/uploads/usersimage_list.gif)
 
     ```
     - 프로필 사진을 등록한 사람들만 모아서 보여준다.
