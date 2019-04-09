@@ -35,6 +35,7 @@
     ```
 
 * 프로필 사진 목록
+
 ![Alt Text](http://52.79.51.149/yeontalk/uploads/usersimage_list.gif)
 
     ```
@@ -44,6 +45,9 @@
     ```
     
 * 즐겨찾기
+
+![Alt Text](http://52.79.51.149/yeontalk/uploads/favorites.gif)
+
 	```
 	- 관심이 있는 친구들을 따로 즐겨찾기 목록에 추가할 수 있다. 
 
