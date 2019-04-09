@@ -41,11 +41,11 @@
     - 프로필 사진을 등록한 사람들만 모아서 보여준다.
 
        + 이유 : 친구들의 프로필 사진을 더 자세히 보기 위해 추가로 화면을 클릭해야 하는 번거러움을 덜어준다. 
-       
+
     
 * 즐겨찾기
 
-![Alt Text](http://52.79.51.149/yeontalk/uploads/favorites.gif)
+![Alt Text](http://52.79.51.149/yeontalk/uploads/favorites2.gif)
 
 
 	- 관심이 있는 친구들을 따로 즐겨찾기 목록에 추가할 수 있다. 
