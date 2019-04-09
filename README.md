@@ -36,7 +36,7 @@
 
 * 프로필 사진 목록
 ![Alt Text](http://52.79.51.149/yeontalk/uploads/usersimagelist2.gif)
-<img src="http://52.79.51.149/yeontalk/uploads/usersimagelist2.gif" width="200" height="100" />
+<img src="http://52.79.51.149/yeontalk/uploads/usersimagelist2.gif?raw=true" width="200px" />
 
     ```
     - 프로필 사진을 등록한 사람들만 모아서 보여준다.
