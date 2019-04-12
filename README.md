@@ -21,7 +21,7 @@
 
 * 채팅방 나누기 
 
-[**채팅방 나누기 영상 링크(2:40)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=160)
+[**채팅방 나누기 영상 링크 (2:40)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=160)
 
 ![채팅방 나누기](http://52.79.51.149/yeontalk/uploads/chatroom.gif)
 
@@ -30,7 +30,7 @@
 
 * 실시간 채팅
 
-[**실시간 채팅 영상 링크**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=160)
+[**실시간 채팅 영상 링크 (3:10)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=190)
 
 ![실시간 채팅](http://52.79.51.149/yeontalk/uploads/chat.gif)
     
@@ -38,6 +38,8 @@
 
 
 * 네트워크 연결 끊김에 따른 채팅 에러 처리
+
+[**채팅 에러 처리 영상 링크 (3:25)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=205)
 
 ![채팅 에러 처리](http://52.79.51.149/yeontalk/uploads/error3.gif)
 
@@ -56,6 +58,8 @@
 
 * 채팅방 나가기
 
+[**채팅방 나가기 영상 링크 (5:16)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=316)
+
 ![채팅방 나가기](http://52.79.51.149/yeontalk/uploads/outchatroom.gif)
 
 	- 사용자가 채팅방을 나가게 되면, 상대방에게 해당 사용자가 채팅방을 나갔다는 메세지가 전송된다. 
@@ -64,6 +68,8 @@
 
 
 ## 2.2. 동영상 압축 전송 
+
+[**동영상 압축 영상 링크 (4:20)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=260)
 
 ![동영상 압축 전송](http://52.79.51.149/yeontalk/uploads/video.gif)
 
@@ -84,16 +90,23 @@
 
 * 영상 통화
 
+[**영상 통화 영상 링크 (4:58)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=298)
+
 ![영상 통화](http://52.79.51.149/yeontalk/uploads/videocall.gif)
 
 ## 2.4. 챗봇
 
 * 챗봇
 
+[**챗봇 영상 링크 (5:30)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=330)
+
 ![챗봇](http://52.79.51.149/yeontalk/uploads/chatbot.gif)
 
 ## 2.5. 친구 리스트
+
 * 친구 목록
+
+[**친구 목록 영상 링크 (00:00)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4)
 
 ![친구 목록](http://52.79.51.149/yeontalk/uploads/userslist4.gif)
 
@@ -112,6 +125,8 @@
 
 * 프로필 사진 목록
 
+[**프로필 사진 목록 영상 링크 (00:52)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=52)
+
 ![프로필 사진 목록](http://52.79.51.149/yeontalk/uploads/user_image_list2.gif)
 
     - 프로필 사진을 등록한 사람들만 모아서 보여준다.
@@ -120,6 +135,8 @@
 
     
 * 즐겨찾기
+
+[**즐겨찾기 영상 링크 (01:05)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=65)
 
 ![즐겨찾기](http://52.79.51.149/yeontalk/uploads/favorites4.gif)
 
@@ -133,6 +150,8 @@
 
 * 친구 조건 설정의 따른 친구 리스트 수정
 
+[**친구 리스트 수정 영상 링크 (01:18)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=78)
+
 ![친구 리스트 수정](http://52.79.51.149/yeontalk/uploads/condition5.gif)
 
 	- 친구 목록을 사용자가 원하는 조건에 맞추어 보여준다. 
@@ -142,6 +161,7 @@
 
 ## 2.6. 프로필 관리
 
+[**프로필 관리 영상 링크 (01:48)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=108)
 
 ![프로필 관리](http://52.79.51.149/yeontalk/uploads/profile.gif)
 
