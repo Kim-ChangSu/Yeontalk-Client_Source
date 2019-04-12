@@ -82,10 +82,16 @@
 
 ![영상 통화](http://52.79.51.149/yeontalk/uploads/videocall.gif)
 
-## 2.4. 친구 리스트
+## 2.4. 챗봇
+
+* 챗봇
+
+![챗봇](http://52.79.51.149/yeontalk/uploads/chatbot.gif)
+
+## 2.5. 친구 리스트
 * 친구 목록
 
-![친구 목록](http://52.79.51.149/yeontalk/uploads/userslist3.gif)
+![친구 목록](http://52.79.51.149/yeontalk/uploads/userslist4.gif)
 
     - 친구들을 최근 어플 접속 시간 순으로 정렬한다.
 
@@ -130,7 +136,7 @@
        + 이유 : 사용자가 본인이 원하는 대화 상대를 더욱 쉽게 찾을 수 있다. 
   		
 
-## 2.5. 프로필 관리
+## 2.6. 프로필 관리
 
 
 ![프로필 관리](http://52.79.51.149/yeontalk/uploads/profile.gif)
@@ -156,10 +162,5 @@
 	```
 
 
-## 2.6. 챗봇
-
-* 챗봇
-
-![챗봇](http://52.79.51.149/yeontalk/uploads/chatbot.gif)
 
 
