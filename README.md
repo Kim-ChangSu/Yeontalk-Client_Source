@@ -21,7 +21,7 @@
 
 * 채팅방 나누기 
 
-[**채팅방 나누기 영상 링크**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=160)
+[**채팅방 나누기 영상 링크(2:40)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=160)
 
 ![채팅방 나누기](http://52.79.51.149/yeontalk/uploads/chatroom.gif)
 
