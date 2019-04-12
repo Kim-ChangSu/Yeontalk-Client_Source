@@ -21,12 +21,16 @@
 
 * 채팅방 나누기 
 
+[**채팅방 나누기 영상 링크**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=160)
+
 ![채팅방 나누기](http://52.79.51.149/yeontalk/uploads/chatroom.gif)
 
 	- 해당 채팅방에서 사용자가 읽지 않은 채팅의 개수가 표시된다. 
 
 
 * 실시간 채팅
+
+[**실시간 채팅 영상 링크**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=160)
 
 ![실시간 채팅](http://52.79.51.149/yeontalk/uploads/chat.gif)
     
