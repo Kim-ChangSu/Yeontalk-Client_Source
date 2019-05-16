@@ -10,6 +10,8 @@
 [**연톡 시연 영상 링크**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4)
 
 ## 1.3. 추가 소스
+[**연톡 코틀린, MVVM, RxJava 리팩토링 소스 링크**](https://github.com/Kim-ChangSu/Yeontalk-Client_Kotlin_Source)
+
 [**연톡 서버 소스 링크**](https://github.com/Kim-ChangSu/Yeontalk-Server_Source)
 
 [**연톡 챗봇 소스 링크**](https://github.com/Kim-ChangSu/Yeontalk-Chatbot_Source)
