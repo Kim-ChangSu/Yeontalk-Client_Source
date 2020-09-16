@@ -7,7 +7,7 @@
 
 
 ## 1.2. 연톡 시연 영상
-[**연톡 시연 영상 링크**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4)
+[**연톡 시연 영상 링크**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4)
 
 ## 1.3. 추가 소스
 [**연톡 코틀린, MVVM, RxJava 리팩토링 소스 링크**](https://github.com/Kim-ChangSu/Yeontalk-Client_Kotlin_Source)
@@ -23,27 +23,21 @@
 
 * 채팅방 나누기 
 
-[**채팅방 나누기 영상 링크 (2:40)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=160)
-
-![채팅방 나누기](http://52.79.51.149/yeontalk/uploads/chatroom.gif)
+[**채팅방 나누기 영상 링크 (2:40)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=160)
 
 	- 해당 채팅방에서 사용자가 읽지 않은 채팅의 개수가 표시된다. 
 
 
 * 실시간 채팅
 
-[**실시간 채팅 영상 링크 (3:10)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=190)
-
-![실시간 채팅](http://52.79.51.149/yeontalk/uploads/chat.gif)
+[**실시간 채팅 영상 링크 (3:10)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=190)
     
 	- 실시간으로 채팅이 읽혔는지, 안 읽혔는지 확인 가능하다. 
 
 
 * 네트워크 연결 끊김에 따른 채팅 에러 처리
 
-[**채팅 에러 처리 영상 링크 (3:25)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=205)
-
-![채팅 에러 처리](http://52.79.51.149/yeontalk/uploads/error3.gif)
+[**채팅 에러 처리 영상 링크 (3:25)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=205)
 
 	- 네트워크 연결이 끊긴 상태에서 채팅을 전송하게 되면 채팅에 에러 표시가 뜬다.
 
@@ -60,9 +54,7 @@
 
 * 채팅방 나가기
 
-[**채팅방 나가기 영상 링크 (5:16)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=316)
-
-![채팅방 나가기](http://52.79.51.149/yeontalk/uploads/outchatroom.gif)
+[**채팅방 나가기 영상 링크 (5:16)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=316)
 
 	- 사용자가 채팅방을 나가게 되면, 상대방에게 해당 사용자가 채팅방을 나갔다는 메세지가 전송된다. 
 
@@ -71,9 +63,7 @@
 
 ## 2.2. 동영상 압축 전송 
 
-[**동영상 압축 영상 링크 (4:20)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=260)
-
-![동영상 압축 전송](http://52.79.51.149/yeontalk/uploads/video.gif)
+[**동영상 압축 영상 링크 (4:20)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=260)
 
 	- 동영상이 압축되어 상대방에서 전송된다.
 
@@ -92,25 +82,19 @@
 
 * 영상 통화
 
-[**영상 통화 영상 링크 (4:58)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=298)
-
-![영상 통화](http://52.79.51.149/yeontalk/uploads/videocall.gif)
+[**영상 통화 영상 링크 (4:58)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=298)
 
 ## 2.4. 챗봇
 
 * 챗봇
 
-[**챗봇 영상 링크 (5:30)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=330)
-
-![챗봇](http://52.79.51.149/yeontalk/uploads/chatbot.gif)
+[**챗봇 영상 링크 (5:30)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=330)
 
 ## 2.5. 친구 리스트
 
 * 친구 목록
 
-[**친구 목록 영상 링크 (00:00)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4)
-
-![친구 목록](http://52.79.51.149/yeontalk/uploads/userslist4.gif)
+[**친구 목록 영상 링크 (00:00)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4)
 
     - 친구들을 최근 어플 접속 시간 순으로 정렬한다.
 
@@ -127,9 +111,7 @@
 
 * 프로필 사진 목록
 
-[**프로필 사진 목록 영상 링크 (00:52)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=52)
-
-![프로필 사진 목록](http://52.79.51.149/yeontalk/uploads/user_image_list2.gif)
+[**프로필 사진 목록 영상 링크 (00:52)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=52)
 
     - 프로필 사진을 등록한 사람들만 모아서 보여준다.
 
@@ -138,10 +120,7 @@
     
 * 즐겨찾기
 
-[**즐겨찾기 영상 링크 (01:05)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=65)
-
-![즐겨찾기](http://52.79.51.149/yeontalk/uploads/favorites4.gif)
-
+[**즐겨찾기 영상 링크 (01:05)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=65)
 
 	- 관심이 있는 친구들을 따로 즐겨찾기 목록에 추가할 수 있다. 
 
@@ -152,9 +131,7 @@
 
 * 친구 조건 설정의 따른 친구 리스트 수정
 
-[**친구 리스트 수정 영상 링크 (01:18)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=78)
-
-![친구 리스트 수정](http://52.79.51.149/yeontalk/uploads/condition5.gif)
+[**친구 리스트 수정 영상 링크 (01:18)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=78)
 
 	- 친구 목록을 사용자가 원하는 조건에 맞추어 보여준다. 
 
@@ -163,9 +140,7 @@
 
 ## 2.6. 프로필 관리
 
-[**프로필 관리 영상 링크 (01:48)**](http://52.79.51.149/yeontalk/uploads/yeontalk_testing.mp4#t=108)
-
-![프로필 관리](http://52.79.51.149/yeontalk/uploads/profile.gif)
+[**프로필 관리 영상 링크 (01:48)**](http://15.165.69.4/portfolio/videos/yeontalk/yeontalk.mp4#t=108)
 
 * 프로필 사진 수정
     ```
